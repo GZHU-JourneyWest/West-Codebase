@@ -1,6 +1,16 @@
 # a-Journey-to-the-West
 西安梦游队，乌拉！
 
+## 3.20
+
+我们一起来写广东工业大学校赛的题目吧~
+
+http://gdutcode.sinaapp.com/contest.php?cid=1074
+
+### 名词
+
+Floyd最短路
+
 ## 3.19
 
 ### 名词
