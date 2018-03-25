@@ -1,40 +1,38 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-char buf[2048];
-char cov[2048];
+const int maxN = 2000;
 
-void build()
+char str[maxN];
+int dp[maxN][maxN];
+
+void lps(int n)
 {
-	for (int i=0, p=0; buf[i]; ++i) {
-		if (isalpha(buf[i])) {
-			cov[p++] = tolower(buf[i]);
+	memset(dp, 0, sizeof(dp));
+	for (int i=0; i<maxN; ++i) dp[i][i] = 1;
+	
+	for (int s=1; s<=n-1; ++s) {
+		for (int i=0; i+s<n; ++i) {
+			int j=i+s;
+			if (str[i] == str[j]) dp[i][j] = dp[i+1][j-1] + 2;
+			else dp[i][j] = max(dp[i+1][j], dp[i][j-1]);
 		}
 	}
 }
 
-int find()
+void deal()
 {
-	int ans = 1;
-	for (int i=0; cov[i]; ++i) {
-		int p = i, q = i;
-		
-		while (cov[q] == cov[q+1]) ++q;
-		i = q;
-		
-		while (p>0 && cov[q+1] && cov[p-1] == cov[q+1]) ++q, --p;
-		ans = max(ans, q-p+1);
+	for (int i=0; str[i]; ++i) {
+		if (isalpha(str[i])) 
+			str[i] = tolower(str[i]); 
 	}
-	return ans;
 }
 
 int main()
 {
-	while (scanf("%s", buf) == 1) {
-		memset(cov, 0, sizeof(cov)); build();
-		int len = strlen(buf);
-		int rev = find();
-		
-		printf("%d\n", len-rev);
+	while (scanf("%s", str) == 1) {
+		int len = strlen(str);
+		deal(); lps(len);
+		printf("%d\n", len-dp[0][len-1]);
 	}
-}
+} 
