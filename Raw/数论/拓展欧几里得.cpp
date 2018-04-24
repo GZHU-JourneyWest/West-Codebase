@@ -1,12 +1,5 @@
-LL gcd(LL a, LL b, LL &x, LL &y)
+void exgcd(LL a, LL b, LL& g, LL &x, LL &y)
 {
-	if (b == 0) {
-		x = 1, y = 0;
-		return a;
-	}
-	else {
-		LL r = gcd(b, a%b, y, x);
-		y -= (a/b)*x;
-		return r;
-	}
+	if (!b) g=a, x=1, y=0;
+	else exgcd(b, a%b, g, y, x), y-=a/b*x;
 }
