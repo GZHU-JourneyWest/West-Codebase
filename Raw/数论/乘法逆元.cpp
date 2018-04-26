@@ -1,14 +1,7 @@
-// 快速幂求法
-inline int rev(int num) {
-	return fpow(num, mod-2);
+int inv[maxN];
+void cal_inv(int n, int mod) 
+{
+	inv[1] = 1;
+	for (int i = 2; i <= n; i++) 
+		inv[i] = ((LL(-mod/i)*inv[mod%i])%mod+mod)%mod;
 }
-
-// 拓展欧几里得求法
-inline int rev(int num) {
-	int g, x, y;
-	exgcd(num, mod, g, x, y);
-	return (x%mod+mod)%mod;
-}
-
-// 递推式求法
-int inv[1] = 1;
