@@ -19,6 +19,7 @@ void kmp(vector<int> &match)
 		if (s[i] == p[j+1]) ++j;
 		if (!p[j+1]) {  // 匹配成功 
 			match.push_back(i-j);
+			j = pre[j];
 		}
 	}
 }
