@@ -1,7 +1,6 @@
 int cell[maxN];  // 有效索引从1开始
 
-inline int lowbit(int x) { return x&-x; }
-
+#define lowbit(x) (x)&(-(x))
 void add(int x, int v) {
 	for (int i = x; i < maxN; i += lowbit(i))
 		cell[i] += v;
