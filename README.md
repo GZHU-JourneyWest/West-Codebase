@@ -8,6 +8,7 @@ Courier New字体真是大坑，这个坑点在于它的下滑线，行距设置
 
 ## 更新日志
 
+- **5/05** 合并Lxy的SCL！We now have 模拟退火求费马点距，负环判断，最短路径堆优化实例
 - **4/30** 实现稀疏表；背包问题初步
 - **4/27** 线段树初步：区间修改和区间覆盖；欧拉函数初步；KMP修改；放弃看《Efficient Data Structures for the Factor Periodicity Problem》
 - **4/26** 完成乘法逆元
