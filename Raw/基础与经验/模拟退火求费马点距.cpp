@@ -32,8 +32,7 @@ double mnth()
 	srand((unsigned)time(NULL));
 
 	double ans=inf;
-	double delta=0.98,T=10; //delta:降温速度 T:初始温度 
-							//(这2个变量的值不固定 自己找感觉取就好了) 
+	double delta=0.98,T=10; //delta:降温速度 T:初始温度(这2个变量的值不固定 自己找感觉取就好了) 
 	_node p=node[1];
 	while(T>1e-8)
 	{
