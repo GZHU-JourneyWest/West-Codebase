@@ -10,7 +10,7 @@ void add(LL *bit, int x, int val) {
 LL sum(LL *bit, int x) {
 	LL rslt = 0;
 	for (int i=x; i; i-=lowbit(i)) {
-		rslt += bit[x];
+		rslt += bit[i];
 	}
 	return rslt;
 }
